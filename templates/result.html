@@ -4,7 +4,73 @@
 
 <p>入力したコピー:{{copy}}</p>
 
-<p>結果:{{df_result}}</p>
+<p>結果:{{result_1_copy}}</p>
 
+<table class="table">
+    <thead class="thead-light">
+        <tr>
+            <th>#</th>
+            <th>類似コピー</th>
+            <th>類似度</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+            <th scope="row">1</th>
+            <td>{{res1_copy}}</td>
+            <td>{{res1_sim}}</td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>{{res2_copy}}</td>
+            <td>{{res2_sim}}</td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td>{{res3_copy}}</td>
+            <td>{{res3_sim}}</td>
+        </tr>
+        <tr>
+            <th scope="row">4</th>
+            <td>{{res4_copy}}</td>
+            <td>{{res4_sim}}</td>
+        </tr>
+        <tr>
+            <th scope="row">5</th>
+            <td>{{res5_copy}}</td>
+            <td>{{res5_sim}}</td>
+        </tr>
+        <tr>
+            <th scope="row">6</th>
+            <td>{{res6_copy}}</td>
+            <td>{{res6_sim}}</td>
+        </tr>
+        <tr>
+            <th scope="row">7</th>
+            <td>{{res7_copy}}</td>
+            <td>{{res7_sim}}</td>
+        </tr>
+        <tr>
+            <th scope="row">8</th>
+            <td>{{res8_copy}}</td>
+            <td>{{res8_sim}}</td>
+        </tr>
+        <tr>
+            <th scope="row">9</th>
+            <td>{{res9_copy}}</td>
+            <td>{{res9_sim}}</td>
+        </tr>
+        <tr>
+            <th scope="row">10</th>
+            <td>{{res10_copy}}</td>
+            <td>{{res10_sim}}</td>
+        </tr>
+
+    </tbody>
+</table>
+
+<!-- 戻るボタン-->
+<a href="{% url 'input_form' %}" class="btn btn-success" style=margin-top:30px;>back</a>
 
 {% endblock %}

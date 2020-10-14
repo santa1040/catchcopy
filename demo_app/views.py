@@ -1,8 +1,6 @@
 from django.shortcuts import render,redirect # 　追加
 from .forms import InputForm
 
-# import joblib
-import numpy as np
 import pandas as pd
 import MeCab
 from gensim.models.doc2vec import Doc2Vec, TaggedDocument
@@ -47,9 +45,49 @@ def result(request):
     result = []
 
     for i in model.docvecs.most_similar([model.infer_vector(wakati(document))]):
-        result.append(['第{}位'.format(rank),  i[1], df.iloc[i[0]][6], 'ID:{}'.format(i[0])])
+        result.append([df.iloc[i[0]][6],  i[1]])
         rank += 1
-    df_result = pd.DataFrame(result, columns=['順位','類似度','キャッチコピー','ID'])
+
+    res1_copy = result[0][0]
+    res1_sim = result[0][1]
+    res2_copy = result[1][0]
+    res2_sim = result[1][1]
+    res3_copy = result[2][0]
+    res3_sim = result[2][1]
+    res4_copy = result[3][0]
+    res4_sim = result[3][1]
+    res5_copy = result[4][0]
+    res5_sim = result[4][1]
+    res6_copy = result[5][0]
+    res6_sim = result[5][1]
+    res7_copy = result[6][0]
+    res7_sim = result[6][1]
+    res8_copy = result[7][0]
+    res8_sim = result[7][1]
+    res9_copy = result[8][0]
+    res9_sim = result[8][1]
+    res10_copy = result[9][0]
+    res10_sim = result[9][1]
 
     # 推論結果をHTMLに渡す
-    return render(request, 'result.html', {'df_result':df_result, 'copy':document})
+    return render(request, 'result.html', {'res1_copy':res1_copy,
+                                            'res1_sim':res1_sim,
+                                            'res2_copy':res2_copy,
+                                            'res2_sim':res2_sim,
+                                            'res3_copy':res3_copy,
+                                            'res3_sim':res3_sim,
+                                            'res4_copy':res4_copy,
+                                            'res4_sim':res4_sim,
+                                            'res5_copy':res5_copy,
+                                            'res5_sim':res5_sim,
+                                            'res6_copy':res6_copy,
+                                            'res6_sim':res6_sim,
+                                            'res7_copy':res7_copy,
+                                            'res7_sim':res7_sim,
+                                            'res8_copy':res8_copy,
+                                            'res8_sim':res8_sim,
+                                            'res9_copy':res9_copy,
+                                            'res9_sim':res9_sim,
+                                            'res10_copy':res10_copy,
+                                            'res10_sim':res10_sim,
+                                            'copy':document})
