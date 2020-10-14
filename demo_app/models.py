@@ -1,15 +1,19 @@
 from django.db import models
+from datetime import date
 
-class SkatList(models.Model):
+
+# こちらでテーブルの中身を定義します
+class Customer(models.Model):
+
 
     # DBのカラムに相当する部分の定義
-    company = models.CharField('名字', max_length=30)
-    page = models.IntegerField('ページ', default=0)
-    award = models.CharField('受賞', max_length=10)
-    name = models.CharField('名前', max_length=10)
-    adress = models.CharField('都道府県', max_length=5)
-    copy1 = models.CharField('コピー（改行あり）', max_length=200)
-    copy2 = models.CharField('コピー（改行なし）', max_length=200)
+    id = models.AutoField(primary_key=True)
+    copy = models.CharField('キャッチコピー', max_length=3000)
 
+    # # 管理画面に表示方法を定義：必須項目が入っているかどうかで表示内容を分ける
+    # # %s:文字列,%d:数値
     # def __str__(self):
-    #     return self.company, self.award, self.copy2
+    #     if self.proba == 0.0:
+    #         return self.copy
+    #     else:
+    #         return self.copy
