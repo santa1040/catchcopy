@@ -9,4 +9,4 @@ class InputForm(forms.ModelForm):
     # DBの内容のメタ情報を記載しています
     class Meta:
         model = Customer
-        exclude = ['id', 'result', 'proba', 'comment', 'registered_date']
+        exclude = ['id']
