@@ -11,8 +11,8 @@ df = pd.read_csv('model/skat_data.csv')
 
 # オプションに -Owakatiを使用
 def wakati(word):
-    # mecab = MeCab.Tagger('-Owakati')
-    mecab = MeCab.Tagger('-d /app/.linuxbrew/lib/mecab/dic/ipadic')
+    mecab = MeCab.Tagger('-Owakati')
+    # mecab = MeCab.Tagger('-d /app/.linuxbrew/lib/mecab/dic/ipadic')
     text = mecab.parse(word)
     ret = text.strip().split()
     return ret
