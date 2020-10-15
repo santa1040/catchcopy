@@ -96,5 +96,5 @@ MEDIA_URL = '/media/'
 # サーバから見たメディアルートの絶対パス
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-# import django_heroku
-# django_heroku.settings(locals())
+import django_heroku
+django_heroku.settings(locals())
