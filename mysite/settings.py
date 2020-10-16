@@ -96,5 +96,9 @@ MEDIA_URL = '/media/'
 # サーバから見たメディアルートの絶対パス
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+# MeCab用環境変数
+LD_LIBRARY_PATH = '/app/.linuxbrew/lib'
+MECAB_PATH = '/app/.linuxbrew/lib/libmecab.so'
+
 import django_heroku
 django_heroku.settings(locals())
